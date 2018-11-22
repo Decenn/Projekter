@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAB199B6-206D-46CE-89BA-E52D8E4E97A9}</ProjectGuid>
+    <ProjectGuid>{0DDA3CDF-9597-4557-8D16-FE43E64E82B6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>IPKalkulator</RootNamespace>
     <AssemblyName>IPKalkulator</AssemblyName>

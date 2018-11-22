@@ -22,7 +22,7 @@ namespace Test2
                 string[] SubnetIdentifier = new string[2];
                 string strIP = "";
                 string strSubnet = "";
-                int[] SubnetMask = new int[4];
+
                 Console.WriteLine("Velkommen til netværkskalkulatoren!\n");
                 Console.WriteLine("Indtast adressen som DD eller CIDR. f.eks.:");
                 Console.WriteLine("192.12.13.14/255.255.255.0 eller 192.12.13.14/24\n");
@@ -32,7 +32,7 @@ namespace Test2
                     CharacterTester = false;
                     string UserInput = Console.ReadLine();
                     UserInput = UserInput.ToLower();
-                    if (UserInput.Length<32 && UserInput.Length>2)
+                    if (UserInput.Length < 32 && UserInput.Length > 2)
                     {
                         for (int i = 0; i < ErrorCharacters.Length; i++)
                         {
@@ -78,7 +78,7 @@ namespace Test2
                             }
                             if (IPError == true)
                             {
-                                if (strSubnet.Length > 15 || strSubnet.Length<7)
+                                if (strSubnet.Length > 15 || strSubnet.Length < 7)
                                 {
                                     SubnetError = false;
                                 }
@@ -128,51 +128,55 @@ namespace Test2
                         Console.WriteLine("\nDu har givet et forkert input");
                         Console.Write("Indtast en ny adresse her: ");
                     }
-                    
-                }
-                    if (strSubnet.Length < 3)
-                    {
-                        SubnetMask = SubnetConverter(strSubnet);
-                    }
-                    else
-                    {
-                        SubnetMask = StringSplitter(strSubnet);
-                    }
-                    int[] IPAdress = StringSplitter(strIP);
-                    int[] NetworkAddress = new int[4];
-                    for (int i = 0; i < SubnetMask.Length; i++)
-                    {
-                        NetworkAddress[i] = IPAdress[i] & SubnetMask[i];
-                    }
-                    Console.Write("\nDin netværksadresse er: ");
-                    for (int i = 0; i < NetworkAddress.Length; i++)
-                    {
-                        if (i == 3)
-                        {
-                            Console.Write(NetworkAddress[i]);
-                        }
-                        else
-                        {
-                            Console.Write(NetworkAddress[i] + ".");
-                        }
-                    }
-                    int UseableHosts = UseableHostsChecker(SubnetMask);
-                    Console.WriteLine("\nAntal usable hosts: " + UseableHosts);
 
-                    Console.Write("\nHvis du vil prøve en anden adresse tast Y, hvis ikke tast N: ");
-                    string LoopOptions = Console.ReadLine();
-                    if (LoopOptions == "Y" || LoopOptions == "y")
+                }
+
+
+                int[] SubnetMask = new int[4];
+                int[] IPAdress = StringSplitter(strIP);
+                int[] NetworkAddress = new int[4];
+
+                if (strSubnet.Length < 3)
+                {
+                    SubnetMask = SubnetConverter(strSubnet);
+                }
+                else
+                {
+                    SubnetMask = StringSplitter(strSubnet);
+                }
+                for (int i = 0; i < SubnetMask.Length; i++)
+                {
+                    NetworkAddress[i] = IPAdress[i] & SubnetMask[i];
+                }
+                Console.Write("\nDin netværksadresse er: ");
+                for (int i = 0; i < NetworkAddress.Length; i++)
+                {
+                    if (i == 3)
                     {
-                        Loop = true;
-                        Console.Clear();
+                        Console.Write(NetworkAddress[i]);
                     }
                     else
                     {
-                        Loop = false;
+                        Console.Write(NetworkAddress[i] + ".");
                     }
-                
-                    
-                    
+                }
+                int UseableHosts = UseableHostsChecker(SubnetMask);
+                Console.WriteLine("\nAntal usable hosts: " + UseableHosts);
+                Console.Write("\nHvis du vil prøve en anden adresse tast Y, hvis ikke tast N: ");
+                ConsoleKeyInfo LoopOptions = Console.ReadKey();
+
+                if (LoopOptions.Key == ConsoleKey.Y)
+                {
+                    Loop = true;
+                    Console.Clear();
+                }
+                else
+                {
+                    Loop = false;
+                }
+
+
+
             }
 
         }
