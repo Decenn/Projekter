@@ -13,46 +13,30 @@ namespace Test2
             bool Loop = true;
             while (Loop == true)
             {
-                string ErrorCharacters = "abcdefghijklmnopqrstuvwxyzæøå!?'=)(&%¤#`´^¨'*-_:;,@£${[]}+| \"½§";
-                string CorrectCharacters = "1234567890./";
-                bool CharacterTester = false;
+                var ErrorCharacters = "abcdefghijklmnopqrstuvwxyzæøå!?'=)(&%¤#`´^¨'*-_:;,@£${[]}+\\|\"½§ ";
                 bool Error = false;
                 bool IPError = true;
                 bool SubnetError = false;
                 string[] SubnetIdentifier = new string[2];
                 string strIP = "";
                 string strSubnet = "";
-
+                Console.SetCursorPosition(50, 0);
                 Console.WriteLine("Velkommen til netværkskalkulatoren!\n");
+                Console.SetCursorPosition(0, 3);
                 Console.WriteLine("Indtast adressen som DD eller CIDR. f.eks.:");
+                Console.SetCursorPosition(0, 4);
                 Console.WriteLine("192.12.13.14/255.255.255.0 eller 192.12.13.14/24\n");
+                Console.SetCursorPosition(0, 5);
                 Console.Write("Indtast her: ");
                 while (Error == false)
                 {
-                    CharacterTester = false;
-                    string UserInput = Console.ReadLine();
-                    UserInput = UserInput.ToLower();
-                    if (UserInput.Length < 32 && UserInput.Length > 2)
+                    
+                    var TestUserInput = Console.ReadLine();
+                    TestUserInput = TestUserInput.ToLower();
+                    var UserInput = new string(TestUserInput.Where(c => !ErrorCharacters.Contains(c)).ToArray());
+                    if (UserInput.Length < 32 && UserInput.Length > 8)
                     {
-                        for (int i = 0; i < ErrorCharacters.Length; i++)
-                        {
-                            if (UserInput.Contains(ErrorCharacters.Substring(i, 1)) == true)
-                            {
-                                CharacterTester = true;
-                                break;
-                            }
-
-                        }
-                        //for (int i = 0; i < CorrectCharacters.Length; i++)
-                        //{
-                        //    if (UserInput.Contains(CorrectCharacters.Substring(i, 1)) == true)
-                        //    {
-                        //        CharacterTester = true;
-                        //        break;
-                        //    }
-
-                        //}
-                        if (CharacterTester == false && UserInput.Contains("/") == true)
+                        if (UserInput.Contains("/") == true)
                         {
                             SubnetIdentifier = UserInput.Split('/');
                             strIP = SubnetIdentifier[0];
@@ -120,7 +104,8 @@ namespace Test2
                         else
                         {
                             Console.WriteLine("\nDu har givet et forkert input");
-                            Console.Write("Indtast en ny adresse her: ");
+                            Console.WriteLine("Du har glemt at bruge symbolet: \"/\" til at markere hvor IP adressen slutter");
+                            Console.Write("\nIndtast en ny adresse her: ");
                         }
                     }
                     else

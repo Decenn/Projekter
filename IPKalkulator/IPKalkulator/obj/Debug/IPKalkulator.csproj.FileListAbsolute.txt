@@ -1,0 +1,7 @@
+D:\Programmerings projekter\Projekter\IPKalkulator\IPKalkulator\bin\Debug\IPKalkulator.exe.config
+D:\Programmerings projekter\Projekter\IPKalkulator\IPKalkulator\bin\Debug\IPKalkulator.exe
+D:\Programmerings projekter\Projekter\IPKalkulator\IPKalkulator\bin\Debug\IPKalkulator.pdb
+D:\Programmerings projekter\Projekter\IPKalkulator\IPKalkulator\obj\Debug\IPKalkulator.csprojAssemblyReference.cache
+D:\Programmerings projekter\Projekter\IPKalkulator\IPKalkulator\obj\Debug\IPKalkulator.csproj.CoreCompileInputs.cache
+D:\Programmerings projekter\Projekter\IPKalkulator\IPKalkulator\obj\Debug\IPKalkulator.exe
+D:\Programmerings projekter\Projekter\IPKalkulator\IPKalkulator\obj\Debug\IPKalkulator.pdb
