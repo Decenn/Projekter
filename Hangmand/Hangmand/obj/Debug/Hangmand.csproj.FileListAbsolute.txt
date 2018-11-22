@@ -1,0 +1,6 @@
+C:\Users\seba2081\documents\visual studio 2017\Projects\Hangmand\Hangmand\bin\Debug\Hangmand.exe.config
+C:\Users\seba2081\documents\visual studio 2017\Projects\Hangmand\Hangmand\bin\Debug\Hangmand.exe
+C:\Users\seba2081\documents\visual studio 2017\Projects\Hangmand\Hangmand\bin\Debug\Hangmand.pdb
+C:\Users\seba2081\documents\visual studio 2017\Projects\Hangmand\Hangmand\obj\Debug\Hangmand.csprojResolveAssemblyReference.cache
+C:\Users\seba2081\documents\visual studio 2017\Projects\Hangmand\Hangmand\obj\Debug\Hangmand.exe
+C:\Users\seba2081\documents\visual studio 2017\Projects\Hangmand\Hangmand\obj\Debug\Hangmand.pdb

@@ -1,0 +1,6 @@
+c:\users\seba2081\documents\visual studio 2017\Projects\Bytebuster\Bytebuster\bin\Debug\Bytebuster.exe.config
+c:\users\seba2081\documents\visual studio 2017\Projects\Bytebuster\Bytebuster\bin\Debug\Bytebuster.exe
+c:\users\seba2081\documents\visual studio 2017\Projects\Bytebuster\Bytebuster\bin\Debug\Bytebuster.pdb
+c:\users\seba2081\documents\visual studio 2017\Projects\Bytebuster\Bytebuster\obj\Debug\Bytebuster.csprojResolveAssemblyReference.cache
+c:\users\seba2081\documents\visual studio 2017\Projects\Bytebuster\Bytebuster\obj\Debug\Bytebuster.exe
+c:\users\seba2081\documents\visual studio 2017\Projects\Bytebuster\Bytebuster\obj\Debug\Bytebuster.pdb

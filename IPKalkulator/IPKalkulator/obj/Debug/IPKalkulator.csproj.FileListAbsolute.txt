@@ -1,0 +1,6 @@
+c:\users\seba2081\documents\visual studio 2017\Projects\IPKalkulator\IPKalkulator\bin\Debug\IPKalkulator.exe.config
+c:\users\seba2081\documents\visual studio 2017\Projects\IPKalkulator\IPKalkulator\bin\Debug\IPKalkulator.exe
+c:\users\seba2081\documents\visual studio 2017\Projects\IPKalkulator\IPKalkulator\bin\Debug\IPKalkulator.pdb
+c:\users\seba2081\documents\visual studio 2017\Projects\IPKalkulator\IPKalkulator\obj\Debug\IPKalkulator.csprojResolveAssemblyReference.cache
+c:\users\seba2081\documents\visual studio 2017\Projects\IPKalkulator\IPKalkulator\obj\Debug\IPKalkulator.exe
+c:\users\seba2081\documents\visual studio 2017\Projects\IPKalkulator\IPKalkulator\obj\Debug\IPKalkulator.pdb
