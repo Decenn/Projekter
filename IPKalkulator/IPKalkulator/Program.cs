@@ -70,10 +70,7 @@ namespace Test2
                             }
                             else if (IPError == true)
                             {
-                                if (IPError == true)
-                                {
-                                    IPError = ErrorTester(strIP);
-                                }
+                                IPError = ErrorTester(strIP);
                                 if (IPError == false)
                                 {
                                     Console.WriteLine("\nDu indtastede en forkert IP");
@@ -83,11 +80,13 @@ namespace Test2
                             }
                             if (IPError == true)
                             {
-                                if (strSubnet.Length > 15 || strSubnet.Length < 7)
+                                if (strSubnet.Length > 15 || strSubnet.Length < 7 && strSubnet.Length>2)
                                 {
                                     SubnetError = false;
+                                    Console.WriteLine("\nDu indtastede en forkert Subnetmaske");
+                                    Console.Write("Indtast en ny addresse her: ");
                                 }
-                                if (strSubnet.Length < 3)
+                                else if (strSubnet.Length < 3)
                                 {
                                     SubnetError = SlashSubnetTester(strSubnet);
                                     if (SubnetError == false)
@@ -136,12 +135,9 @@ namespace Test2
                     }
 
                 }
-
-
                 int[] SubnetMask = new int[4];
                 int[] IPAdress = StringSplitter(strIP);
                 int[] NetworkAddress = new int[4];
-
                 if (strSubnet.Length < 3)
                 {
                     SubnetMask = SubnetConverter(strSubnet);
@@ -180,9 +176,6 @@ namespace Test2
                 {
                     Loop = false;
                 }
-
-
-
             }
 
         }
@@ -298,7 +291,7 @@ namespace Test2
         {
             bool SubnetTest = true;
             int Test = Convert.ToInt32(Tester);
-            if (Test > 31 || Test < 0)
+            if (Test > 31 || Test < 1)
             {
                 SubnetTest = false;
             }

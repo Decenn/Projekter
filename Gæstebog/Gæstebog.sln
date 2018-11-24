@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gæstebog", "Gæstebog\Gæstebog.csproj", "{4BBA1D1A-DFAE-4C6A-A30C-C754CE31A7FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BBA1D1A-DFAE-4C6A-A30C-C754CE31A7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BBA1D1A-DFAE-4C6A-A30C-C754CE31A7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BBA1D1A-DFAE-4C6A-A30C-C754CE31A7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BBA1D1A-DFAE-4C6A-A30C-C754CE31A7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AF20300-E196-4978-B660-30955BD3874E}
+	EndGlobalSection
+EndGlobal
