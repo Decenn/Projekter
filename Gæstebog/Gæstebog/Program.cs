@@ -12,7 +12,7 @@ namespace Gæstebog
         static void Main(string[] args)
         {
             
-            string path = @"D:\Programmerings projekter\Projekter";
+            string path = @"C:\Users\Sebber\Desktop";
             if (!File.Exists(path))
             {
                 using (StreamWriter sw = File.CreateText(path))
