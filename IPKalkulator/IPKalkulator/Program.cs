@@ -14,6 +14,7 @@ namespace Test2
             while (Loop == true)
             {
                 var ErrorCharacters = "abcdefghijklmnopqrstuvwxyzæøå!?'=)(&%¤#`´^¨'*-_:;,@£${[]}+\\|\"½§ ";
+                
                 bool Error = false;
                 bool IPError = true;
                 bool SubnetError = false;
@@ -30,12 +31,32 @@ namespace Test2
                 Console.Write("Indtast her: ");
                 while (Error == false)
                 {
-                    
+
                     var TestUserInput = Console.ReadLine();
                     TestUserInput = TestUserInput.ToLower();
                     var UserInput = new string(TestUserInput.Where(c => !ErrorCharacters.Contains(c)).ToArray());
                     if (UserInput.Length < 32 && UserInput.Length > 8)
                     {
+                        for (int i = 0; i < UserInput.Length - 1; i++)
+                        {
+                            if (UserInput.Substring(i, 2) == "..")
+                            {
+                                UserInput = UserInput.Remove(i, 1);
+                                i -= 1;
+                            }
+                            else if (UserInput.Substring(i, 2) == "//")
+                            {
+                                UserInput = UserInput.Remove(i, 1);
+                                i -= 1;
+                            }
+                            else if (UserInput.Substring(i, 2) == "./")
+                            {
+                                UserInput = UserInput.Remove(i, 1);
+                                i -= 1;
+                            }
+                        }
+                        UserInput = UserInput.TrimStart('.');
+                        UserInput = UserInput.TrimEnd('.');
                         if (UserInput.Contains("/") == true)
                         {
                             SubnetIdentifier = UserInput.Split('/');
