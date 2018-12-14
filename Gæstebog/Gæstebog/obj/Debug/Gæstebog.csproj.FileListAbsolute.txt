@@ -5,3 +5,9 @@ D:\Programmerings projekter\Projekter\Gæstebog\Gæstebog\obj\Debug\Gæstebog.cs
 D:\Programmerings projekter\Projekter\Gæstebog\Gæstebog\obj\Debug\Gæstebog.csproj.CoreCompileInputs.cache
 D:\Programmerings projekter\Projekter\Gæstebog\Gæstebog\obj\Debug\Gæstebog.exe
 D:\Programmerings projekter\Projekter\Gæstebog\Gæstebog\obj\Debug\Gæstebog.pdb
+C:\Users\seba2081\Desktop\Programmerings projekter\Gæstebog\Gæstebog\bin\Debug\Gæstebog.exe.config
+C:\Users\seba2081\Desktop\Programmerings projekter\Gæstebog\Gæstebog\bin\Debug\Gæstebog.exe
+C:\Users\seba2081\Desktop\Programmerings projekter\Gæstebog\Gæstebog\bin\Debug\Gæstebog.pdb
+C:\Users\seba2081\Desktop\Programmerings projekter\Gæstebog\Gæstebog\obj\Debug\Gæstebog.csprojResolveAssemblyReference.cache
+C:\Users\seba2081\Desktop\Programmerings projekter\Gæstebog\Gæstebog\obj\Debug\Gæstebog.exe
+C:\Users\seba2081\Desktop\Programmerings projekter\Gæstebog\Gæstebog\obj\Debug\Gæstebog.pdb

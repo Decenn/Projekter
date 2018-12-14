@@ -7,35 +7,47 @@ using System.Threading.Tasks;
 
 namespace Gæstebog
 {
+    
     class Program
     {
+
+        static string PathFinder() //Beslutter hvor filen gemmes
+        {
+            string path = @"C:\Users\seba2081\Desktop\Programmerings projekter\test.txt";
+            return path;
+        }
+        static void Menu() //Udskriver menuen
+        {
+            Console.Clear();
+            Console.SetWindowSize(100, 35);
+            Console.SetCursorPosition(30, 0);
+            Console.WriteLine("Velkommen til Gæste-Registrerings programmet");
+            Console.SetCursorPosition(0, 5);
+            Console.WriteLine("Telefon nr.: ");
+            Console.SetCursorPosition(0, 6);
+            Console.WriteLine("Navn       : ");
+            Console.SetCursorPosition(0, 7);
+            Console.WriteLine("Adresse    : ");
+            Console.SetCursorPosition(0, 8);
+            Console.WriteLine("Post nr.   : ");
+            Console.SetCursorPosition(0, 9);
+            Console.WriteLine("By         : ");
+            Console.SetCursorPosition(0, 10);
+            Console.WriteLine("Email      : ");
+            Console.SetCursorPosition(0, 25);
+            Console.WriteLine("[O]: Opret    [F] Find    [V] Vis Alle    [Q] Afslut");
+            Console.SetCursorPosition(0, 28);
+            Console.Write("Vælg en funktion: ");
+        }
         static void Main()
         {
+            
             FileCreator();
             bool Continue = true;
-            while (Continue == true)
+            while (Continue)
             {
                 ConsoleKeyInfo ChosenFunction;
-                Console.Clear();
-                Console.SetWindowSize(100, 35);
-                Console.SetCursorPosition(30, 0);
-                Console.WriteLine("Velkommen til Gæste-Registrerings programmet");
-                Console.SetCursorPosition(0, 5);
-                Console.WriteLine("Telefon nr.: ");
-                Console.SetCursorPosition(0, 6);
-                Console.WriteLine("Navn       : ");
-                Console.SetCursorPosition(0, 7);
-                Console.WriteLine("Adresse    : ");
-                Console.SetCursorPosition(0, 8);
-                Console.WriteLine("Post nr.   : ");
-                Console.SetCursorPosition(0, 9);
-                Console.WriteLine("By         : ");
-                Console.SetCursorPosition(0, 10);
-                Console.WriteLine("Email      : ");
-                Console.SetCursorPosition(0, 25);
-                Console.WriteLine("[O]: Opret    [F] Find    [V] Vis Alle    [Q] Afslut");
-                Console.SetCursorPosition(0, 28);
-                Console.Write("Vælg en funktion: ");
+                Menu();
                 ChosenFunction = Console.ReadKey();
                 if (ChosenFunction.Key == ConsoleKey.O)
                 {
@@ -60,9 +72,9 @@ namespace Gæstebog
             
 
         }
-        private static void FileCreator()
+        private static void FileCreator() //Laver text filen hvis den ikke allerede eksistere, ellers opretter den filen
         {
-            string path = @"D:\Programmerings projekter\Projekter\test.txt";
+            string path = PathFinder();
             if (!File.Exists(path))
             {
                 using (StreamWriter sw = File.CreateText(path))
@@ -71,9 +83,10 @@ namespace Gæstebog
                 }
             }
         }
-        private static string UserRegistration()
+        private static string UserRegistration() //Alt information som brugeren skal taste ind gøres her
         {
             bool InputChecker = false;
+            string StrUserInput = "";
             string[] UserInput = new string[6];
             int CursorPosition = 5;
             //Telefon nr.
@@ -158,6 +171,8 @@ namespace Gæstebog
 
             //Adresse
             {
+                string UserInputError = "123456789";
+                bool UserInputTester = false;
                 while (InputChecker == false)
                 {
                     int AddressNumber = 0;
@@ -171,55 +186,74 @@ namespace Gæstebog
                     UserInput[2] = new string(TestUserInput.Where(c => !ErrorCharacters.Contains(c)).ToArray());
                     UserInput[2] = UserInput[2].TrimStart(' ');
                     UserInput[2] = UserInput[2].TrimEnd(' ');
-                    Console.SetCursorPosition(20, 20);
-                    Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
-                    if (UserInput[2].Contains(' '))
+                    for (int i = 0; i < UserInput[2].Length; i++)
                     {
-
-                        string[] UserTestInput = UserInput[2].Split(' ');
-                        UserInput[2] = "";
-                        for (int i = 0; i < UserTestInput.Length; i++)
+                        if (UserInput[2].Contains(UserInputError.Substring(i,1)))
                         {
-                            string temp = "";
-                            try
+                            UserInputTester = true;
+                            break;
+                        }
+                    }
+                    if (UserInputTester)
+                    {
+                        
+                        Console.SetCursorPosition(20, 20);
+                        Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
+                        if (UserInput[2].Contains(' '))
+                        {
+
+                            string[] UserTestInput = UserInput[2].Split(' ');
+                            UserInput[2] = "";
+                            for (int i = 0; i < UserTestInput.Length; i++)
                             {
-                                AddressNumber = Convert.ToInt32(UserTestInput[i]);
-                                UserInput[2] = UserInput[2] + UserTestInput[i];
-                                UserInput[2] += " ";
+                                string temp = "";
+                                try
+                                {
+                                    AddressNumber = Convert.ToInt32(UserTestInput[i]);
+                                    UserInput[2] = UserInput[2] + AddressNumber;
+                                    UserInput[2] += " ";
+                                }
+                                catch (Exception)
+                                {
+                                    temp = UserTestInput[i].Substring(0, 1);
+                                    UserTestInput[i] = UserTestInput[i].Remove(0, 1);
+                                    UserTestInput[i] = temp.ToUpper() + UserTestInput[i];
+                                    UserInput[2] = UserInput[2] + UserTestInput[i];
+                                    UserInput[2] += " ";
+                                }
+                                
+                                //TestUserInput = UserInput[2];
+                                
                             }
-                            catch (Exception)
+                            bool DuplicateInput = DuplicateChecker(UserInput[2]);
+                            if (DuplicateInput == true)
                             {
-                                temp = UserTestInput[i].Substring(0, 1);
-                                UserTestInput[i] = UserTestInput[i].Remove(0, 1);
-                                UserTestInput[i] = temp.ToUpper() + UserTestInput[i];
-                                UserInput[2] = UserInput[2] + UserTestInput[i];
-                                UserInput[2] += " ";
+                                Console.SetCursorPosition(20, 20);
+                                Console.Write(TestUserInput + " er allerede registreret!");
+                                InputChecker = false;
+
+                            }
+                            else
+                            {
+                                InputChecker = true;
+                                UserInput[2] = UserInput[2].TrimEnd(' ');
+                                Console.SetCursorPosition(13, CursorPosition);
+                                Console.Write(UserInput[2] + " : Adressen er registreret!");
+                                CursorPosition += 1;
                             }
                         }
 
                     }
                     else
                     {
-                        string temp = "";
-                        temp = UserInput[2].Substring(0, 1);
-                        UserInput[2] = UserInput[2].Remove(0, 1);
-                        UserInput[2] = temp.ToUpper() + UserInput[2];
-                    }
-                    UserInput[2] = UserInput[2].TrimEnd(' ');
-                    TestUserInput = UserInput[2];
-                    bool DuplicateInput = DuplicateChecker(TestUserInput);
-                    if (DuplicateInput == true)
-                    {
                         Console.SetCursorPosition(20, 20);
-                        Console.Write(TestUserInput + " er allerede registreret!");
+                        Console.WriteLine(UserInput[2] + " er ikke en gyldig adresse!");
+                        //string temp = "";
+                        //temp = UserInput[2].Substring(0, 1);
+                        //UserInput[2] = UserInput[2].Remove(0, 1);
+                        //UserInput[2] = temp.ToUpper() + UserInput[2];
                     }
-                    else
-                    {
-                        InputChecker = true;
-                        Console.SetCursorPosition(13, CursorPosition);
-                        Console.Write(UserInput[2] + " : Adressen er registreret!");
-                        CursorPosition += 1;
-                    }
+                   
                 }
                 
                 
@@ -274,43 +308,78 @@ namespace Gæstebog
 
             //Email Addresse
             {
+                int EmailInputChecker = 0;
                 while (InputChecker == false)
                 {
-                    var ErrorCharacters = "!?'=)(&%¤#`´^¨'*-_:;,£${[]}+\\|\"½§ /";
+                    var ErrorCharacters = "!?'=)(&%¤#`´^¨'*:;,£${[]}+\\|\"½§ /";
                     Console.SetCursorPosition(0, CursorPosition);
                     Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
                     Console.WriteLine("Email      : ");
                     Console.SetCursorPosition(13, CursorPosition);
                     var TestUserInput = Console.ReadLine();
+                    string UserInputError = TestUserInput;
                     UserInput[5] = new string(TestUserInput.Where(c => !ErrorCharacters.Contains(c)).ToArray());
                     Console.SetCursorPosition(20, 20);
                     Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
-                    if (UserInput[5].Contains('@') && UserInput[5].Length>7)
+                    if (UserInput[5].Contains('@') && UserInput[5].Length>7&& (UserInput[5].Contains(".com") || UserInput[5].Contains(".dk")))
                     {
-                        for (int i = 0; i < UserInput.Length - 1; i++)
+                        for (int i = 0; i < UserInput[5].Length - 1; i++)
                         {
+                            
                             if (UserInput[5].Substring(i, 2) == "@@")
                             {
                                 UserInput[5] = UserInput[5].Remove(i, 1);
                                 i -= 1;
+                                
+                                
                             }
+                            else if (UserInput[5].Substring(i,1) == "@")
+                            {
+                                if (EmailInputChecker > 0)
+                                {
+                                    UserInput[5] = UserInput[5].Remove(i, 1);
+                                }
+                                else
+                                {
+                                    EmailInputChecker += 1;
+                                }
+                               
+                            }
+                            
                         }
-                        TestUserInput = new string(TestUserInput.Where(c => !ErrorCharacters.Contains(c)).ToArray());
-                        bool DuplicateInput = DuplicateChecker(TestUserInput);
-                        if (DuplicateInput == true)
+                        if (EmailInputChecker == 1)
                         {
-                            Console.SetCursorPosition(20, 20);
-                            Console.Write(TestUserInput + " er allerede registreret!");
+                            string[] EmailChecker = UserInput[5].Split('@');
+                            if (EmailChecker[1].Contains(".com") || EmailChecker[1].Contains(".dk"))
+                            {
+                                bool DuplicateInput = DuplicateChecker(UserInput[5]);
+                                if (DuplicateInput == true)
+                                {
+                                    Console.SetCursorPosition(20, 20);
+                                    Console.Write(UserInput[5] + " er allerede registreret!");
+                                }
+                                else
+                                {
+                                    Console.SetCursorPosition(20, 20);
+                                    Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
+                                    Console.SetCursorPosition(13, CursorPosition);
+                                    InputChecker = true;
+                                    Console.Write(UserInput[5] + " : Email adressen er registeret!");
+                                }
+                            }
+                            else
+                            {
+                                Console.SetCursorPosition(20, 20);
+                                Console.Write(UserInputError + " er ikke en gyldigt email adresse");
+                            }
+
                         }
                         else
                         {
                             Console.SetCursorPosition(20, 20);
-                            Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
-                            Console.SetCursorPosition(13, CursorPosition);
-                            InputChecker = true;
-                            Console.Write(UserInput[5] + " : Email adressen er registeret!");
+                            Console.Write(UserInputError + " er ikke en gyldigt email adresse");
                         }
-                        
+
                     }
                     else
                     {
@@ -319,43 +388,36 @@ namespace Gæstebog
                     }
                 }
             }
-            string StrUserInput = "";
+            
             for (int i = 0; i < UserInput.Length; i++)
             {
                 StrUserInput = StrUserInput + " , " + UserInput[i];
             }
             StrUserInput = StrUserInput.TrimStart(' ', ',');
             return StrUserInput;
-        }
+        } 
         private static void TextImplementation(string UserInput)
         {
-            string path = @"D:\Programmerings projekter\Projekter\test.txt";
+            string path = PathFinder();
             using (StreamWriter sw = new StreamWriter(path, true))
             {
                 sw.WriteLine(UserInput);
             }
             return;
-        }
+        } //Tager brugerens input og taster det ind i filen
         private static bool DuplicateChecker(string UserInput)
         {
-            string path = @"D:\Programmerings projekter\Projekter\test.txt";
-            bool Checker = false;
+            string path = PathFinder();
             string text = File.ReadAllText(path);
-            if (text.Contains(UserInput))
-            {
-                Checker = true;
-                return Checker;
-            }
-            return Checker;
-            
-        }
+            return text.Contains(UserInput);
+        } //Checker om den information som brugeren har skrevet allerede eksistere i databasen
         private static void FileReader()
         {
-            string path = @"D:\Programmerings projekter\Projekter\test.txt";
+            string path = PathFinder();
             string[] FileLines = File.ReadAllLines(path);
             int LineCounter = 0;
             bool ShowMore = true;
-            while (ShowMore == true)
+            while (ShowMore)
             {
                 Console.Clear();
                 Console.SetCursorPosition(0, 3);
@@ -366,7 +428,7 @@ namespace Gæstebog
                     {
                         break;
                     }
-                    if (i > 8)
+                    else if (i > 16)
                     {
                         break;
                     }
@@ -387,30 +449,28 @@ namespace Gæstebog
                 {
                     Console.Write("Hvis du gerne vil se mere tast Y, ellers tast en vilkårlig tast: ");
                     ConsoleKeyInfo LoopOptions = Console.ReadKey();
-                    if (LoopOptions.Key == ConsoleKey.Y)
-                    {
-                        ShowMore = true;
-
-                    }
-                    else
+                    if (LoopOptions.Key != ConsoleKey.Y)
                     {
                         ShowMore = false;
+
                     }
+                    
                 }
                 
             }
             return;
             
-        }
+        } //Læser informationen fundet i databasen op til brugeren
         private static void FileSearcher()
         {
-            bool Continue = false;
-            while (Continue == false)
+            bool Continue = true;
+            string path = PathFinder();
+            while (Continue)
             {
                 Console.SetCursorPosition(0, 15);
                 Console.Write("Indtast et telefon nr. eller email, som du gerne vil søge efter: ");
                 string UserInput = Console.ReadLine();
-                string path = @"D:\Programmerings projekter\Projekter\test.txt";
+                
                 string[] FileLines = File.ReadAllLines(path);
                 bool WrongInput = false;
                 for (int i = 0; i < FileLines.Length; i++)
@@ -418,7 +478,7 @@ namespace Gæstebog
                     if (FileLines[i].Contains(UserInput))
                     {
                         string[] UserInfo = FileLines[i].Split(',');
-                        Console.WriteLine("\nTelefon nr.: " + UserInfo[0]);
+                        Console.WriteLine("\nTelefon nr.:  " + UserInfo[0]);
                         Console.WriteLine("Navn       : " + UserInfo[1]);
                         Console.WriteLine("Adresse    : " + UserInfo[2]);
                         Console.WriteLine("Post nr.   : " + UserInfo[3]);
@@ -460,13 +520,13 @@ namespace Gæstebog
                 }
                 else
                 {
-                    Continue = true;
+                    Continue = false;
                 }
                 
 
             }
             
             return;
-        }
+        } //Søger efter information i databasen
     }
 }
