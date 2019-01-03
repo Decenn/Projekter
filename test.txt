@@ -18,7 +18,6 @@
 30201020 , Seb Røn , Herninggade 30 , 2100 , København , sebhh@gmail.com
 20103020 , Seb , Vorde 30 , 3502 , Orde , seb@gma@.com
 30202010 , Seb , Spdla , 3020 , Vlr , seb@gm@.com
-
 20202020 , Seb , Seb , 2500 , Vær , seb@gmailc.o
 25252525 , Seb , Sæa , 3500 , Vær , sebrls@fkda.com
 25252525 , Seb , Sæa , 3500 , Vær , sebrls@fkda.com
@@ -95,3 +94,6 @@
 30402010 , Seb , Soda , 3020 , Vos , seb@gmai.com
 30201030 , Seb , Sodas , 3040 , Værs , seb@gm.com
 40305060 , Seb , Dosa , 3040 , Vors , seb@gma.il.com
+35353535 , Hh Nilsen , Søvej 31 , 3500 , Højetåstrup , hh@mail.tele.dk
+35353536 , Hh Nilsen , Søvej 21 , 3500 , Højetåstrup , hhn@mail.tele.dk
+35353537 , Hans-henrik Hørmann Nielsen , Søvej 75 , 3500 , Højetåstrup , hhh@m.com

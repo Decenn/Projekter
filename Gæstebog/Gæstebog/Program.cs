@@ -13,7 +13,7 @@ namespace Gæstebog
 
         static string PathFinder() //Beslutter hvor filen gemmes
         {
-            string path = @"C:\Users\seba2081\Desktop\Programmerings projekter\test.txt";
+            string path = @"D:\Programmerings projekter\Projekter\test.txt";
             return path;
         }
         static void Menu() //Udskriver menuen
@@ -79,61 +79,61 @@ namespace Gæstebog
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    sw.WriteLine("Velkommen til gæstebogen\n:");
+                    sw.WriteLine("Velkommen til gæstebogen:\n");
                 }
             }
         }
         private static string UserRegistration() //Alt information som brugeren skal taste ind gøres her
         {
-            bool InputChecker = false;
-            string StrUserInput = "";
-            string[] UserInput = new string[6];
-            int CursorPosition = 5;
+            bool InputChecker = false; //Bruges til de forskellige while loops
+            string StrUserInput = ""; //Bruges til sidst for at konvertere UserInput array til et string i stedet
+            string[] UserInput = new string[6]; //Et array til at indsamle alt input brugeren giver
+            int CursorPosition = 5; //Bruges til at bestemme hvilken linje brugeren skriver på
             //Telefon nr.
             {
                 
                 while (InputChecker == false)
                 {
-                    var ErrorCharacters = "abcdefghijklmnopqrstuvwxyzæøå!?'=)(&%¤#`´^¨'*-_:;,@£${[]}+\\|\"½§ ./";
+                    var ErrorCharacters = "abcdefghijklmnopqrstuvwxyzæøå!?'=)(&%¤#`´^¨'*-_:;,@£${[]}+\\|\"½§ ./"; //Tegn og bogstaver som ikke kan bruges i telefon nummere
                     Console.SetCursorPosition(0, CursorPosition);
-                    Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
+                    Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r"); //Rydder det der står. Bliver brugt i tilfælde af at brugeren indtaster noget forkert
                     Console.WriteLine("Telefon nr.: ");
                     Console.SetCursorPosition(13, CursorPosition);
                     var TestUserInput = Console.ReadLine();
                     TestUserInput = TestUserInput.ToLower();
-                    TestUserInput = new string(TestUserInput.Where(c => !ErrorCharacters.Contains(c)).ToArray());
-                    bool DuplicateInput = DuplicateChecker(TestUserInput);
-                    if (DuplicateInput == true)
+                    TestUserInput = new string(TestUserInput.Where(c => !ErrorCharacters.Contains(c)).ToArray()); //Checker hvad brugeren har skrevet, og fjerner brug af forkerte tegn eller bogstaver, som findes i linje 97 string
+                    bool DuplicateInput = DuplicateChecker(TestUserInput); //Tester om brugerens input allerede findes i databasen
+                    if (DuplicateInput) //Hvis inputten allerede findes
                     {
                         Console.SetCursorPosition(20, 20);
                         Console.Write(TestUserInput + " er allerede registreret!");
                     }
-                    else
+                    else //Hvis det ikke gør
                     {
-                        UserInput[0] = new string(TestUserInput.Where(c => !ErrorCharacters.Contains(c)).ToArray());
+                        UserInput[0] = TestUserInput;
                         Console.SetCursorPosition(20, 20);
-                        Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r");
-                        if (UserInput[0].Length == 8)
+                        Console.Write("\r" + new string(' ', Console.WindowWidth) + "\r"); //Bliver brugt til at rydde tidligere fejl meddelelser
+                        if (UserInput[0].Length == 8) //Checker om det nummer brugeren har skrevet ind består af 8 tal
                         {
                             Console.SetCursorPosition(13, CursorPosition);
-                            InputChecker = true;
-                            Console.Write(UserInput[0] + " : Nummeret er registeret!");
+                            InputChecker = true; //Bryder while loopet
+                            Console.Write(UserInput[0] + " : Nummeret er registeret!"); //Giver brugerens besked om at de indtastede et brugbart telefon nummer
                         }
                         else
                         {
                             Console.SetCursorPosition(20, 20);
-                            Console.Write(UserInput[0] + " er ikke et gyldigt telefon nr.");
+                            Console.Write(UserInput[0] + " er ikke et gyldigt telefon nr."); //Fortæller brugeren at de ikke har indtastet et brugbart telefon nummer og loopet starter forfra
                         }
                     }
                     
                 }
-                CursorPosition += 1;
+                CursorPosition += 1; //Rykker linjen brugeren skriver på 1 linje ned
 
             }
             InputChecker = false;
             //Navn
             {
-                var ErrorCharacters = "0123456789!?'=)(&%¤#`´^¨'*-_:;,@£${[]}+\\|\"½§./";
+                var ErrorCharacters = "0123456789!?'=)(&%¤#`´^¨'*_:;,@£${[]}+\\|\"½§./"; //Samme som linje 97, men med andre fejl symboler da navne indholder bogstaver, men ikke tal
                 Console.SetCursorPosition(13, CursorPosition);
                 var TestUserInput = Console.ReadLine();
                 TestUserInput = TestUserInput.ToLower();
@@ -396,7 +396,7 @@ namespace Gæstebog
             StrUserInput = StrUserInput.TrimStart(' ', ',');
             return StrUserInput;
         } 
-        private static void TextImplementation(string UserInput)
+        private static void TextImplementation(string UserInput) //Tager brugerens input og taster det ind i filen
         {
             string path = PathFinder();
             using (StreamWriter sw = new StreamWriter(path, true))
@@ -404,33 +404,41 @@ namespace Gæstebog
                 sw.WriteLine(UserInput);
             }
             return;
-        } //Tager brugerens input og taster det ind i filen
-        private static bool DuplicateChecker(string UserInput)
+        } 
+        private static bool DuplicateChecker(string UserInput) //Checker om den information som brugeren har skrevet allerede eksistere i databasen
         {
             string path = PathFinder();
             string text = File.ReadAllText(path);
             return text.Contains(UserInput);
-        } //Checker om den information som brugeren har skrevet allerede eksistere i databasen
-        private static void FileReader()
+        } 
+        private static void FileReader() //Læser informationen fundet i databasen op til brugeren
         {
             string path = PathFinder();
             string[] FileLines = File.ReadAllLines(path);
-            int LineCounter = 0;
+            int LineCounter = 2;
             bool ShowMore = true;
             while (ShowMore)
             {
                 Console.Clear();
+                Console.WriteLine("Velkommen til gæstebogen:");
                 Console.SetCursorPosition(0, 3);
-                Console.WriteLine("Der er i alt " + (FileLines.Length - 2) + " registreringer i gæstebogen\n");
-                for (int i = 0; i < FileLines.Length; i++)
+                if (FileLines.Length <= 2)
+                {
+                    Console.WriteLine("Der er ingen registreringer i gæstebogen");
+                }
+                else
+                {
+                    Console.WriteLine("Der er i alt " + (FileLines.Length - 2) + " registreringer i gæstebogen\n");
+                }
+               
+                for (int i = 0; i < 15; i++)
                 {
                     if (FileLines.Length == LineCounter)
                     {
-                        break;
-                    }
-                    else if (i > 16)
-                    {
-                        break;
+                        Console.SetCursorPosition(0, 25);
+                        Console.Write("Der er ikke mere at vise - tryk en tast for at komme tilbage til menuen: ");
+                        Console.ReadKey();
+                        return;
                     }
                     else
                     {
@@ -439,29 +447,18 @@ namespace Gæstebog
                     }
                 }
                 Console.SetCursorPosition(0, 25);
-                if (LineCounter == FileLines.Length)
+                Console.Write("Hvis du gerne vil se mere tast Y, ellers tast en vilkårlig tast: ");
+                ConsoleKeyInfo LoopOptions = Console.ReadKey();
+                if (LoopOptions.Key != ConsoleKey.Y)
                 {
-                    Console.Write("Der er ikke mere at vise - tryk en tast for at komme tilbage til menuen: ");
-                    Console.ReadKey();
-                    return;
-                }
-                else
-                {
-                    Console.Write("Hvis du gerne vil se mere tast Y, ellers tast en vilkårlig tast: ");
-                    ConsoleKeyInfo LoopOptions = Console.ReadKey();
-                    if (LoopOptions.Key != ConsoleKey.Y)
-                    {
-                        ShowMore = false;
+                    ShowMore = false;
 
-                    }
-                    
                 }
-                
             }
             return;
             
-        } //Læser informationen fundet i databasen op til brugeren
-        private static void FileSearcher()
+        } 
+        private static void FileSearcher() //Søger efter information i databasen
         {
             bool Continue = true;
             string path = PathFinder();
@@ -527,6 +524,6 @@ namespace Gæstebog
             }
             
             return;
-        } //Søger efter information i databasen
+        } 
     }
 }
