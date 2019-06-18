@@ -1,0 +1,7 @@
+D:\Programmerings projekter\Projekter\CSharpNutshell\CSharpNutshell\bin\Debug\CSharpNutshell.exe.config
+D:\Programmerings projekter\Projekter\CSharpNutshell\CSharpNutshell\bin\Debug\CSharpNutshell.exe
+D:\Programmerings projekter\Projekter\CSharpNutshell\CSharpNutshell\bin\Debug\CSharpNutshell.pdb
+D:\Programmerings projekter\Projekter\CSharpNutshell\CSharpNutshell\obj\Debug\CSharpNutshell.csprojAssemblyReference.cache
+D:\Programmerings projekter\Projekter\CSharpNutshell\CSharpNutshell\obj\Debug\CSharpNutshell.csproj.CoreCompileInputs.cache
+D:\Programmerings projekter\Projekter\CSharpNutshell\CSharpNutshell\obj\Debug\CSharpNutshell.exe
+D:\Programmerings projekter\Projekter\CSharpNutshell\CSharpNutshell\obj\Debug\CSharpNutshell.pdb

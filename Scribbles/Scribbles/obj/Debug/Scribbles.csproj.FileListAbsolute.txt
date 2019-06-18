@@ -1,0 +1,7 @@
+D:\Programmerings projekter\Projekter\Scribbles\Scribbles\bin\Debug\Scribbles.exe.config
+D:\Programmerings projekter\Projekter\Scribbles\Scribbles\bin\Debug\Scribbles.exe
+D:\Programmerings projekter\Projekter\Scribbles\Scribbles\bin\Debug\Scribbles.pdb
+D:\Programmerings projekter\Projekter\Scribbles\Scribbles\obj\Debug\Scribbles.csprojAssemblyReference.cache
+D:\Programmerings projekter\Projekter\Scribbles\Scribbles\obj\Debug\Scribbles.csproj.CoreCompileInputs.cache
+D:\Programmerings projekter\Projekter\Scribbles\Scribbles\obj\Debug\Scribbles.exe
+D:\Programmerings projekter\Projekter\Scribbles\Scribbles\obj\Debug\Scribbles.pdb

@@ -1,0 +1,7 @@
+D:\Programmerings projekter\Projekter\Builder Design Pattern\Builder Design Pattern\bin\Debug\Builder Design Pattern.exe.config
+D:\Programmerings projekter\Projekter\Builder Design Pattern\Builder Design Pattern\bin\Debug\Builder Design Pattern.exe
+D:\Programmerings projekter\Projekter\Builder Design Pattern\Builder Design Pattern\bin\Debug\Builder Design Pattern.pdb
+D:\Programmerings projekter\Projekter\Builder Design Pattern\Builder Design Pattern\obj\Debug\Builder Design Pattern.csprojAssemblyReference.cache
+D:\Programmerings projekter\Projekter\Builder Design Pattern\Builder Design Pattern\obj\Debug\Builder Design Pattern.csproj.CoreCompileInputs.cache
+D:\Programmerings projekter\Projekter\Builder Design Pattern\Builder Design Pattern\obj\Debug\Builder Design Pattern.exe
+D:\Programmerings projekter\Projekter\Builder Design Pattern\Builder Design Pattern\obj\Debug\Builder Design Pattern.pdb
