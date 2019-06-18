@@ -1,0 +1,10 @@
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\bin\Debug\H2CaseBank.exe.config
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\bin\Debug\H2CaseBank.exe
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\bin\Debug\H2CaseBank.pdb
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\obj\Debug\H2CaseBank.csprojAssemblyReference.cache
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\obj\Debug\H2CaseBank.csproj.CoreCompileInputs.cache
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\obj\Debug\H2CaseBank.exe
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\obj\Debug\H2CaseBank.pdb
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\bin\Debug\StringExtension.dll
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\bin\Debug\StringExtension.pdb
+C:\Users\tec\source\repos\H2CaseBank\H2CaseBank\obj\Debug\H2CaseBank.csproj.CopyComplete

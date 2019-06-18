@@ -1,0 +1,5 @@
+C:\Users\tec\source\repos\H2CaseBank\StringExtension\bin\Debug\StringExtension.dll
+C:\Users\tec\source\repos\H2CaseBank\StringExtension\bin\Debug\StringExtension.pdb
+C:\Users\tec\source\repos\H2CaseBank\StringExtension\obj\Debug\StringExtension.csproj.CoreCompileInputs.cache
+C:\Users\tec\source\repos\H2CaseBank\StringExtension\obj\Debug\StringExtension.dll
+C:\Users\tec\source\repos\H2CaseBank\StringExtension\obj\Debug\StringExtension.pdb

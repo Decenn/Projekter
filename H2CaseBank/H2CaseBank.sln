@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H2CaseBank", "H2CaseBank\H2CaseBank.csproj", "{8527617D-797E-4C39-A67E-18A94EBD0CCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringExtension", "StringExtension\StringExtension.csproj", "{5F3662AA-FF2B-485C-B527-223582779DD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8527617D-797E-4C39-A67E-18A94EBD0CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8527617D-797E-4C39-A67E-18A94EBD0CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8527617D-797E-4C39-A67E-18A94EBD0CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8527617D-797E-4C39-A67E-18A94EBD0CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F3662AA-FF2B-485C-B527-223582779DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3662AA-FF2B-485C-B527-223582779DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3662AA-FF2B-485C-B527-223582779DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3662AA-FF2B-485C-B527-223582779DD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51D61F58-2A13-4401-B8AF-102BA53AD99F}
+	EndGlobalSection
+EndGlobal
