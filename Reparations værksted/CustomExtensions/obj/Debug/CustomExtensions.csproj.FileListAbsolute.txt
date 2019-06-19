@@ -1,0 +1,12 @@
+C:\Users\tec\source\repos\H1GruppeProjekt\CustomExtensions\bin\Debug\CustomExtensions.dll
+C:\Users\tec\source\repos\H1GruppeProjekt\CustomExtensions\bin\Debug\CustomExtensions.pdb
+C:\Users\tec\source\repos\H1GruppeProjekt\CustomExtensions\obj\Debug\CustomExtensions.csprojAssemblyReference.cache
+C:\Users\tec\source\repos\H1GruppeProjekt\CustomExtensions\obj\Debug\CustomExtensions.csproj.CoreCompileInputs.cache
+C:\Users\tec\source\repos\H1GruppeProjekt\CustomExtensions\obj\Debug\CustomExtensions.dll
+C:\Users\tec\source\repos\H1GruppeProjekt\CustomExtensions\obj\Debug\CustomExtensions.pdb
+C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\CustomExtensions\bin\Debug\CustomExtensions.dll
+C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\CustomExtensions\bin\Debug\CustomExtensions.pdb
+C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\CustomExtensions\obj\Debug\CustomExtensions.csprojAssemblyReference.cache
+C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\CustomExtensions\obj\Debug\CustomExtensions.csproj.CoreCompileInputs.cache
+C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\CustomExtensions\obj\Debug\CustomExtensions.dll
+C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\CustomExtensions\obj\Debug\CustomExtensions.pdb
