@@ -62,18 +62,35 @@ Nedenunder finder du nogle små programmer jeg lavede da jeg først startede på
 Første gang jeg programmeret var da jeg startede, og derfor er de ret basic i både kodening og struktur.
 Jeg har valgt at indkludere dem for at kunne minde mig selv om hvor mit niveau lå var da jeg startede.
 
+De er sorteret fra nyeste til ældste.
 
 ### Gæstebog
 * [Gæstebog](https://github.com/Decenn/Projekter/tree/master/Gæstebog)
-Dette program er mit grundforløb eksamens projekt. Det går ud på at lave en database i en tekst fil
+
+Dette program er mit grundforløb eksamens projekt. Det går ud på at lave en database i en tekst fil.
+Man skulle kunne både skrive til og læse fra databasen.
 
 ### IP Kalkulator
 * [IP Kalkulator](https://github.com/Decenn/Projekter/tree/master/IPKalkulator)
 
+Programmet kan udregne din ipv4 netværks adresse udfra den ip adresse og subnetmask du giver den.
+Den kan både tage tage imod en ipv4 adresse der ser sådan ud: 
+```cs
+192.168.1.10 255.255.255.0
+```
+Men også en der ser sådan ud:
+```cs
+192.168.1.10/24
+```
+Dette var et grundforløbs eksamens projekt man kunne vælge, i stedet for Gæstebogen.
+Jeg valgte at lave begge, men brugte Gæstebogen som den reele eksamens opgave.
+
 ### Hangmand
 * [Hangmand](https://github.com/Decenn/Projekter/tree/master/Hangmand)
+
+Et lille program jeg lavede i en af de første uger på grundforløbet, hvor jeg havde programmering. Det er baseret på spillet galge.
 
 ### Bytebuster
 * [Bytebuster](https://github.com/Decenn/Projekter/tree/master/Bytebuster)
 
-
+Et lille spil, som var en afleverings opgave i starten af grundforløbet.
