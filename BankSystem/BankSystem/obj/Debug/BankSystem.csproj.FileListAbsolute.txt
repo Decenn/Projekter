@@ -1,7 +1,0 @@
-D:\Programmerings projekter\Projekter\BankSystem\BankSystem\bin\Debug\BankSystem.exe.config
-D:\Programmerings projekter\Projekter\BankSystem\BankSystem\bin\Debug\BankSystem.exe
-D:\Programmerings projekter\Projekter\BankSystem\BankSystem\bin\Debug\BankSystem.pdb
-D:\Programmerings projekter\Projekter\BankSystem\BankSystem\obj\Debug\BankSystem.csprojAssemblyReference.cache
-D:\Programmerings projekter\Projekter\BankSystem\BankSystem\obj\Debug\BankSystem.csproj.CoreCompileInputs.cache
-D:\Programmerings projekter\Projekter\BankSystem\BankSystem\obj\Debug\BankSystem.exe
-D:\Programmerings projekter\Projekter\BankSystem\BankSystem\obj\Debug\BankSystem.pdb
