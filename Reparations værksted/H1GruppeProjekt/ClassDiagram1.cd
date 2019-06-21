@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="H1GruppeProjekt.Cars" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAUBAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Cars.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H1GruppeProjekt.Customers" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAAAAECAAAhAgCUIgAAAAAAAEAAAAAAAAAAAAAAAMAA=</HashCode>
+      <FileName>Customers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="H1GruppeProjekt.Database" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAEAAAAAQAACIAQAAgBAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H1GruppeProjekt.ListCreator" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAACAAAAAgAAAAAAAAAAAAAAAAIAAABAAAAAAABAAA=</HashCode>
+      <FileName>ListCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H1GruppeProjekt.Program" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H1GruppeProjekt.ServiceCheck" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAABAkAAAEIQAAAAAAAABAAAAAQAAAAAAAAAwAA=</HashCode>
+      <FileName>ServiceCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H1GruppeProjekt.VehicleBuilder" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="H1GruppeProjekt.VehicleBuilder.FuelType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>VehicleBuilder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QAEQAEABSEAAAEAUBAAAAAAAAAAQAAGQgQgJkAAJEAA=</HashCode>
+      <FileName>VehicleBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="H1GruppeProjekt.Workshop" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Workshop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.UI" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>UI\UI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.Display" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\UI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

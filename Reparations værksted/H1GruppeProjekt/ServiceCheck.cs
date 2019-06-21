@@ -8,9 +8,10 @@ namespace H1GruppeProjekt
 {
     class ServiceCheck
     {
+        readonly private Database database;
         private int visitID;
-        private Customers customer;
-        private VehicleBuilder vehicle;
+        private Customers customer = new Customers();
+        private VehicleBuilder vehicle = new Cars();
         private string reason;
         private DateTime visitDate;
         public int VisitID { get { return visitID; } set { visitID = value; } }
@@ -20,7 +21,8 @@ namespace H1GruppeProjekt
         public DateTime VisitDate { get { return visitDate; } set { visitDate = value; } }
         public ServiceCheck() { }
         public ServiceCheck(VehicleBuilder vehicle, Customers customer) { }
-        public void UpdateInfo(ServiceCheck serviceCheck) { }
-        public void DeleteInfo(ServiceCheck serviceCheck) { }
+        public void UpdateInfo(ServiceCheck serviceCheck) => database.UpdateInfo(this);
+        public void ShowInfo(ServiceCheck serviceCheck) => database.ShowInfo(this);
+        public void DeleteInfo(ServiceCheck serviceCheck) => database.DeleteInfo(this);
     }
 }

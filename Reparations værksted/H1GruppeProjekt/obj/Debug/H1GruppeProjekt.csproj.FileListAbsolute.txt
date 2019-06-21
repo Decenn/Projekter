@@ -28,3 +28,33 @@ C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppePr
 C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\CustomExtensions.dll
 C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\CustomExtensions.pdb
 C:\Users\tec\Desktop\Gruppe Projekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csproj.CopyComplete
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\H1GruppeProjekt.exe.config
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\H1GruppeProjekt.exe
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\H1GruppeProjekt.pdb
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\CustomExtensions.dll
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\CustomExtensions.pdb
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csprojAssemblyReference.cache
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csproj.CoreCompileInputs.cache
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csproj.CopyComplete
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.exe
+C:\Users\tec\Desktop\H1-Gruppe-Projekt-versionv3\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.pdb
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csprojAssemblyReference.cache
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csproj.CoreCompileInputs.cache
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.exe
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.pdb
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\H1GruppeProjekt.exe.config
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\H1GruppeProjekt.exe
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\H1GruppeProjekt.pdb
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\CustomExtensions.dll
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\CustomExtensions.pdb
+D:\Programmerings projekter\H1GruppeProjekt\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csproj.CopyComplete
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\H1GruppeProjekt.exe.config
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\H1GruppeProjekt.exe
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\H1GruppeProjekt.pdb
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\CustomExtensions.dll
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\bin\Debug\CustomExtensions.pdb
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csprojAssemblyReference.cache
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csproj.CoreCompileInputs.cache
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.csproj.CopyComplete
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.exe
+C:\Users\tec\Documents\GitHub\H1-Gruppe-Projekt\H1GruppeProjekt\H1GruppeProjekt\obj\Debug\H1GruppeProjekt.pdb

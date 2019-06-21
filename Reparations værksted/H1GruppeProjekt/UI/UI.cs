@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using H1GruppeProjekt;
 
 
 //Langt fra perfekt
@@ -152,15 +153,15 @@ namespace UI
                             //Ny list<string> metode hos bil klassen der retunere info om bilen (new list<string>{ $"Brand: {this.Brand}", $"Model: {this.Model} }")
                             //Sæt den i Show.Text = den nye list<string> metode
                             Show.Run();
-                            Menu.PrintFrame(); 
+                            Menu.PrintFrame();
                             Menu.Choice = new List<string> { "Værkstedbesøg", "Rediger", "Slet" };
-                    
+
                             switch (Menu.Run())
                             {
                                 case "Værkstedbesøg":
                                     {
                                         Menu.PrintFrame();
-                                        Menu.Choice = new List<string> { "Opret Besøg", "Vis Besøg"};
+                                        Menu.Choice = new List<string> { "Opret Besøg", "Vis Besøg" };
                                         switch (Menu.Run())
                                         {
                                             case "Opret Besøg":
@@ -214,7 +215,8 @@ namespace UI
                         {
                             //Meget af det samme som Find(Bil)
                             ShowMany.PrintFrame();
-                            ShowMany.Choice = test; 
+                            //ShowMany.Choice = test;
+                            ShowMany.Choice = ListCreator.ToStringCustomerList();
                             ShowMany.Run();
                             Menu.PrintFrame();
                             Menu.Choice = new List<string> { "Opret Bil", "Rediger", "Slet" };
@@ -246,7 +248,8 @@ namespace UI
                         {
                             Input.PrintFrame();
                             Input.Labels = new List<string> { "Fornavn", "Efternavn" };
-                            Input.Run(); //Til constructor
+                            Input.Run(new Customers());
+                            //Input.Run(); //Til constructor
                             break;
                         }
                     case "Afslut":
@@ -317,11 +320,63 @@ namespace UI
                 {
                     Console.SetCursorPosition(X1 + 1 + Tab, Y1 + i * 2 + 1);
                     Input.Add(Console.ReadLine());
+
                 }
 
                 Console.CursorVisible = false;
                 PrintFrame();
                 return Input;
+            }
+            public void Run(VehicleBuilder vehicle)
+            {
+                Console.CursorVisible = true;
+                int Tab = 0;
+                for (int x = 0; x < Labels.Count(); x++)
+                {
+                    if (Labels[x].Length > Tab)
+                    {
+                        Tab = Labels[x].Length;
+                    }
+
+                    Console.SetCursorPosition(X1 + 1, Y1 + x * 2 + 1);
+                    Console.Write(Labels[x] + ":");
+                }
+                Tab += 2;
+                int i = 0;
+
+                Console.SetCursorPosition(X1 + 1 + Tab, Y1 + i * 2 + 1);
+                vehicle.DistanceDriven = InputChecker.DecimalInputChecker(X1 + 1 + Tab, Y1 + i * 2 + 1);
+                
+
+
+
+                Console.CursorVisible = false;
+                PrintFrame();
+            }
+            /// <summary>
+            /// Customer constructur
+            /// </summary>
+            /// <param name="customer"></param>
+            public void Run(Customers customer)
+            {
+                Console.CursorVisible = true;
+                int Tab = 0;
+                for (int x = 0; x < Labels.Count(); x++)
+                {
+                    if (Labels[x].Length > Tab)
+                    {
+                        Tab = Labels[x].Length;
+                    }
+
+                    Console.SetCursorPosition(X1 + 1, Y1 + x * 2 + 1);
+                    Console.Write(Labels[x] + ":");
+                }
+                Tab += 2;
+                int i = 0;
+                new UIConstructors().CustomerConstructor(customer, X1 + 1 + Tab, Y1 + i * 2);
+
+                Console.CursorVisible = false;
+                PrintFrame();
             }
         }
 

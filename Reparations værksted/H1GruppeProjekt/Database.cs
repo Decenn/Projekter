@@ -9,30 +9,19 @@ namespace H1GruppeProjekt
 {
     class Database
     {
-        readonly static SqlConnection con = new SqlConnection(@"Data Source=localhost;Initial Catalog=AutoShopDB;Integrated Security=True");
-
-        public int GetNextAvailableID(List<Customers> customers)
-        {
-            int id = 0;
-            foreach (Customers customer in customers)
-            {
-                if (customer.CustomerID > id)
-                    id = customer.CustomerID;
-            }
-            return ++id;
-        }
-
+        readonly static SqlConnection con = new SqlConnection(@"Data Source=SKAB6-PC-02;Initial Catalog=AutoshopDB;Integrated Security=True");
+        
         #region CreateNewEntryInDatabase
 
         /// <summary>
         /// Creates a new vehicle in the SQL database
         /// </summary>
         /// <param name="vehicle"></param>
-        public static void CreateNewEntry(VehicleBuilder vehicle)
+        public void CreateNewEntry(VehicleBuilder vehicle)
         {
             SqlCommand cmd;
 
-            cmd = new SqlCommand("INSERT INTO Vehicles(regNr,brand,model,productionYear,distance,fuelType,color,doors,wheels,customerID,[date])", con);
+            cmd = new SqlCommand("INSERT INTO Vehicles(@regNr,@brand,@model,@productionYear,@distance,@fuelType,@color,@doors,@wheels,@customerID,@creationDate)", con);
             con.Open();
 
             cmd.Parameters.AddWithValue("@regNr", vehicle.RegNr);
@@ -45,7 +34,7 @@ namespace H1GruppeProjekt
             cmd.Parameters.AddWithValue("@doors", vehicle.Doors);
             cmd.Parameters.AddWithValue("@wheels", vehicle.Wheels);
             cmd.Parameters.AddWithValue("@customerID", vehicle.Customer.CustomerID);
-            cmd.Parameters.AddWithValue("@[date]", vehicle.CreationDate);
+            cmd.Parameters.AddWithValue("@creationDate", vehicle.CreationDate);
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -56,15 +45,16 @@ namespace H1GruppeProjekt
         /// Creates a new customer in the SQL database
         /// </summary>
         /// <param name="customer"></param>
-        public static void CreateNewEntry(Customers customer)
+        public void CreateNewEntry(Customers customer)
         {
             SqlCommand cmd;
-            cmd = new SqlCommand("INSERT INTO Customer(customerID,firstName,lastName,[date]", con);
+            cmd = new SqlCommand("INSERT INTO Customer VALUES (@customerID,@firstName,@lastName,@creationDate)", con);
+            con.Close();
             con.Open();
             cmd.Parameters.AddWithValue("@customerID", customer.CustomerID);
             cmd.Parameters.AddWithValue("@firstName", customer.Firstname);
             cmd.Parameters.AddWithValue("@lastName", customer.Lastname);
-            cmd.Parameters.AddWithValue("@[date]", customer.CreationDate);
+            cmd.Parameters.AddWithValue("@creationDate", customer.CreationDate);
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -73,16 +63,16 @@ namespace H1GruppeProjekt
         /// Creates a new service check in the SQL database
         /// </summary>
         /// <param name="serviceCheck"></param>
-        public static void CreateNewEntry(ServiceCheck serviceCheck)
+        public void CreateNewEntry(ServiceCheck serviceCheck)
         {
             SqlCommand cmd;
-            cmd = new SqlCommand("INSERT INTO Visits(visitID,customerID,regNr,reason,[date]", con);
+            cmd = new SqlCommand("INSERT INTO Visits VALUES (@visitID,@customerID,@regNr,@reason,@creationDate", con);
             con.Open();
             cmd.Parameters.AddWithValue("@visitID", serviceCheck.VisitID);
             cmd.Parameters.AddWithValue("@customerID", serviceCheck.Customer.CustomerID);
             cmd.Parameters.AddWithValue("@regNr", serviceCheck.Vehicle.RegNr);
             cmd.Parameters.AddWithValue("@reason", serviceCheck.Reason);
-            cmd.Parameters.AddWithValue("@[date]", serviceCheck.VisitDate);
+            cmd.Parameters.AddWithValue("@creationDate", serviceCheck.VisitDate);
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -94,12 +84,12 @@ namespace H1GruppeProjekt
         /// Updates SQL database info for a vehicle
         /// </summary>
         /// <param name="vehicle"></param>
-        public static void UpdateInfo(VehicleBuilder vehicle)
+        public void UpdateInfo(VehicleBuilder vehicle)
         {
             int i = vehicle.Customer.CustomerID;
             SqlCommand cmd;
             cmd = new SqlCommand("UPDATE Vehicles SET regNr = @regNr, brand = @brand, model = @model, productionYear = @productionYear, " +
-                "distance = @distance, fuelType = @fuelType, color = @color, doors = @doors, wheels = @wheels, customerID = @customerID, [date] = @[date]" +
+                "distance = @distance, fuelType = @fuelType, color = @color, doors = @doors, wheels = @wheels, customerID = @customerID, creationDate = @creationDate" +
                 " where regNr=@i", con);
             con.Open();
             cmd.Parameters.Add("@i", System.Data.SqlDbType.Int);
@@ -115,7 +105,7 @@ namespace H1GruppeProjekt
             cmd.Parameters.AddWithValue("@doors", vehicle.Doors);
             cmd.Parameters.AddWithValue("@wheels", vehicle.Wheels);
             cmd.Parameters.AddWithValue("@customerID", vehicle.Customer.CustomerID);
-            cmd.Parameters.AddWithValue("@[date]", vehicle.CreationDate);
+            cmd.Parameters.AddWithValue("@creationDate", vehicle.CreationDate);
             cmd.ExecuteNonQuery();
             con.Close();
         } 
@@ -124,11 +114,11 @@ namespace H1GruppeProjekt
         /// Updates SQL database info for a customer
         /// </summary>
         /// <param name="customer"></param>
-        public static void UpdateInfo(Customers customer)
+        public void UpdateInfo(Customers customer)
         {
             int i = customer.CustomerID;
             SqlCommand cmd;
-            cmd = new SqlCommand("UPDATE Customer SET customerID = @customerID, firstName = @firstName, lastName = @lastName, [date] = @[date]" +
+            cmd = new SqlCommand("UPDATE Customer SET customerID = @customerID, firstName = @firstName, lastName = @lastName, creationDate = @creationDate" +
                 " where customerID=@i", con);
             con.Open();
             cmd.Parameters.Add("@i", System.Data.SqlDbType.Int);
@@ -136,7 +126,7 @@ namespace H1GruppeProjekt
             cmd.Parameters.AddWithValue("@customerID", customer.CustomerID);
             cmd.Parameters.AddWithValue("@firstName", customer.Firstname);
             cmd.Parameters.AddWithValue("@lastName", customer.Lastname);
-            cmd.Parameters.AddWithValue("@[date]", customer.CreationDate);
+            cmd.Parameters.AddWithValue("@creationDate", customer.CreationDate);
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -145,11 +135,11 @@ namespace H1GruppeProjekt
         /// Updates SQL database info for a Service check
         /// </summary>
         /// <param name="serviceCheck"></param>
-        public static void UpdateInfo(ServiceCheck serviceCheck)
+        public void UpdateInfo(ServiceCheck serviceCheck)
         {
             int i = serviceCheck.VisitID;
             SqlCommand cmd;
-            cmd = new SqlCommand("UPDATE Visits SET visitID = @visitID, customerID = @customerID, regNr = @regNr, reason = @reason, [date] = @[date]" +
+            cmd = new SqlCommand("UPDATE Visits SET visitID = @visitID, customerID = @customerID, regNr = @regNr, reason = @reason, creationDate = @creationDate" +
                 " where visitID=@i", con);
             con.Open();
             cmd.Parameters.Add("@i", System.Data.SqlDbType.Int);
@@ -158,7 +148,7 @@ namespace H1GruppeProjekt
             cmd.Parameters.AddWithValue("@customerID", serviceCheck.Customer.CustomerID);
             cmd.Parameters.AddWithValue("@regNr", serviceCheck.Vehicle.RegNr);
             cmd.Parameters.AddWithValue("@reason", serviceCheck.Reason);
-            cmd.Parameters.AddWithValue("@[date]", serviceCheck.VisitDate);
+            cmd.Parameters.AddWithValue("@creationDate", serviceCheck.VisitDate);
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -166,7 +156,11 @@ namespace H1GruppeProjekt
         #endregion
 
         #region DeleteInfo
-        public static void DeleteInfo(ServiceCheck serviceCheck)
+        /// <summary>
+        /// Deletes a service check from the database
+        /// </summary>
+        /// <param name="serviceCheck"></param>
+        public void DeleteInfo(ServiceCheck serviceCheck)
         {
             int i = serviceCheck.VisitID;
             SqlCommand cmd;
@@ -193,7 +187,12 @@ namespace H1GruppeProjekt
 
             con.Close();
         }
-        public static void DeleteInfo(VehicleBuilder vehicle)
+
+        /// <summary>
+        /// Deletes a vehicle from the database
+        /// </summary>
+        /// <param name="vehicle"></param>
+        public void DeleteInfo(VehicleBuilder vehicle)
         {
             int i = vehicle.RegNr;
             SqlCommand cmd;
@@ -220,7 +219,12 @@ namespace H1GruppeProjekt
 
             con.Close();
         }
-        public static void DeleteInfo(Customers customer)
+
+        /// <summary>
+        /// Deletes a user from the database
+        /// </summary>
+        /// <param name="customer"></param>
+        public void DeleteInfo(Customers customer)
         {
             int i = customer.CustomerID;
             SqlCommand cmd;
@@ -249,12 +253,85 @@ namespace H1GruppeProjekt
         }
         #endregion
 
+        #region ShowInfo
+
+        public void ShowInfo(List<VehicleBuilder> vehicles)
+        {
+            foreach(VehicleBuilder vehicle in vehicles)
+            {
+                Console.WriteLine(vehicle.CreationDate);
+                Console.WriteLine(vehicle.RegNr);
+                Console.WriteLine(vehicle.Brand);
+                Console.WriteLine(vehicle.Model);
+                Console.WriteLine(vehicle.Color);
+                Console.WriteLine(vehicle.ProductionYear);
+                Console.WriteLine(vehicle.Type);
+                Console.WriteLine(vehicle.DistanceDriven);
+                Console.WriteLine(vehicle.Doors);
+                Console.WriteLine(vehicle.Wheels);
+                Console.ReadKey();
+            }
+        }
+
+        public void ShowInfo(VehicleBuilder vehicle)
+        {
+            Console.WriteLine(vehicle.Customer.CustomerID);
+            Console.WriteLine(vehicle.Customer.Firstname);
+            Console.WriteLine(vehicle.Customer.Lastname);
+            Console.WriteLine(vehicle.Customer.Vehicles.Count());
+            Console.WriteLine(vehicle.CreationDate);
+            Console.WriteLine(vehicle.RegNr);
+            Console.WriteLine(vehicle.Brand);
+            Console.WriteLine(vehicle.Model);
+            Console.WriteLine(vehicle.Color);
+            Console.WriteLine(vehicle.ProductionYear);
+            Console.WriteLine(vehicle.Type);
+            Console.WriteLine(vehicle.DistanceDriven);
+            Console.WriteLine(vehicle.Doors);
+            Console.WriteLine(vehicle.Wheels);
+            Console.ReadKey();
+        }
+        public void ShowInfo(Customers customer)
+        {
+            Console.WriteLine(customer.CustomerID);
+            Console.WriteLine(customer.Firstname);
+            Console.WriteLine(customer.Lastname);
+            Console.WriteLine(customer.Vehicles.Count());
+            Console.WriteLine(customer.CreationDate);
+            Console.ReadKey();
+        }
+        public void ShowInfo(ServiceCheck serviceCheck)
+        {
+            Console.WriteLine(serviceCheck.VisitID);
+            Console.WriteLine(serviceCheck.Customer.CustomerID);
+            Console.WriteLine(serviceCheck.Customer.Firstname);
+            Console.WriteLine(serviceCheck.Customer.Lastname);
+            Console.WriteLine(serviceCheck.Vehicle.RegNr);
+            Console.WriteLine(serviceCheck.VisitDate);
+            Console.WriteLine(serviceCheck.Reason);
+            Console.ReadKey();
+        }
+        public void ShowCustomersVehicleInfo(Customers customer)
+        {
+            List<VehicleBuilder> customersVehicles = new List<VehicleBuilder>();
+            foreach(VehicleBuilder vehicle in ListCreator.VehiclesList)
+            {
+                if (customer.CustomerID == vehicle.Customer.CustomerID)
+                    customersVehicles.Add(vehicle);
+            }
+            ShowInfo(customersVehicles);
+            
+        }
+
+        #endregion
+
         #region ListCreation
 
         /// <summary>
         /// Creates the CustomersList by reading from the SQL database
         /// </summary>
-        public static void CreateCustomersList()
+        /// 
+        public void CreateCustomersList()
         {
             con.Open();
             using (SqlCommand command = new SqlCommand("SELECT * FROM Customer", con))
@@ -276,10 +353,11 @@ namespace H1GruppeProjekt
             }
             con.Close();
         }
+
         /// <summary>
         /// Creates the VehiclesList by reading from the SQL database
         /// </summary>
-        public static void CreateVehiclesList()
+        public void CreateVehiclesList()
         {
             con.Open();
             using (SqlCommand command = new SqlCommand("SELECT * FROM Vehicles", con))
@@ -322,10 +400,11 @@ namespace H1GruppeProjekt
             }
 
         }
+
         /// <summary>
         /// Creates the ServiceVisitsList by reading from the SQL database
         /// </summary>
-        public static void CreateServiceVisitsList()
+        public void CreateServiceVisitsList()
         {
             con.Open();
             using (SqlCommand command = new SqlCommand("SELECT * FROM Visits", con))
@@ -354,7 +433,7 @@ namespace H1GruppeProjekt
         /// </summary>
         /// <param name="sender"></param>
         /// <returns></returns>
-        public static VehicleBuilder.FuelType FuelTypeEnumConverter(object sender)
+        public VehicleBuilder.FuelType FuelTypeEnumConverter(object sender)
         {
             string input = sender.ToString();
             if (input.Contains(VehicleBuilder.FuelType.Benzin.ToString()))

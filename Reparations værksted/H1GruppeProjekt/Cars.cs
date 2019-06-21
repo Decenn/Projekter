@@ -8,27 +8,24 @@ namespace H1GruppeProjekt
 {
     class Cars : VehicleBuilder
     {
+        readonly private Database database;
         public Cars()
         {
-            Database.CreateNewEntry(this);
+            
         }
         public override string ToString(VehicleBuilder car)
         {
-            throw new NotImplementedException();
+            return $"{car.RegNr} {car.Brand} {car.Model} {car.Color} {car.Type}";
         }
-        public override void UpdateInfo(VehicleBuilder car)
-        {
-            
-            throw new NotImplementedException();
-        }
-        public override void ShowInfo(VehicleBuilder car)
-        {
-            throw new NotImplementedException();
-        }
-        public override void DeleteInfo(VehicleBuilder car)
-        {
-            throw new NotImplementedException();
-        }
+        public override void UpdateInfo(VehicleBuilder car) => database.UpdateInfo(car);
+        public override void ShowInfo(VehicleBuilder car) => database.ShowInfo(car);
+        public override void DeleteInfo(VehicleBuilder car) => database.DeleteInfo(car);
+
+        /// <summary>
+        /// Returns the next available RegNr
+        /// </summary>
+        /// <param name="vehicles"></param>
+        /// <returns></returns>
         public override int GetNextAvailableRegNr(List<VehicleBuilder> vehicles)
         {
             int nextRegNr = 0;
@@ -39,6 +36,7 @@ namespace H1GruppeProjekt
             }
             return ++nextRegNr;
         }
+
         public Cars(Customers user)
         {
             
@@ -46,7 +44,8 @@ namespace H1GruppeProjekt
             RegNr = GetNextAvailableRegNr(ListCreator.VehiclesList);
             
             ListCreator.VehiclesList.Add(this);
-            Database.CreateNewEntry(this);
+            database.CreateNewEntry(this);
         }
+
     }
 }

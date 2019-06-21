@@ -19,7 +19,7 @@ namespace H1GruppeProjekt
         private string model;
         private int productionYear;
         private decimal distanceDriven;
-        private DateTime creationDate = DateTime.Now;
+        private DateTime creationDate;
         public DateTime CreationDate { get { return creationDate; } set { creationDate = value; } }
         public Customers Customer { get { return customer; } set { customer = value; } }
         public string Color { get { return color; } set { color = value; } }

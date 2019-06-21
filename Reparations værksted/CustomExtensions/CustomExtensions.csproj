@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{219322A9-0B56-4309-9678-7384FD2475AC}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>H1GruppeProjekt</RootNamespace>
-    <AssemblyName>H1GruppeProjekt</AssemblyName>
+    <ProjectGuid>{042A8920-58B7-40F9-94C3-854715BF02BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CustomExtensions</RootNamespace>
+    <AssemblyName>CustomExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,27 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cars.cs" />
-    <Compile Include="Customers.cs" />
-    <Compile Include="Database.cs" />
-    <Compile Include="InputChecker.cs" />
-    <Compile Include="ListCreator.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceCheck.cs" />
-    <Compile Include="UIConstructors.cs" />
-    <Compile Include="UI\UI.cs" />
-    <Compile Include="VehicleBuilder.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CustomExtensions\CustomExtensions.csproj">
-      <Project>{042a8920-58b7-40f9-94c3-854715bf02bb}</Project>
-      <Name>CustomExtensions</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

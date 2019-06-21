@@ -12,10 +12,15 @@ namespace H1GruppeProjekt
     {
         static void Main()
         {
+            Database database = new Database();
+            database.CreateCustomersList();
+            database.CreateVehiclesList();
+            Customers.LastNameSorting();
+            //ListCreator.CustomersList.Sort();
             UI.UI.UIMain();
-            Database.CreateCustomersList();
-            Database.CreateVehiclesList();
-            Database.CreateServiceVisitsList();
+            
+            
+            database.CreateServiceVisitsList();
         }
     }
 }
